@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
+import {Routes,Route} from 'react-router-dom';
+import UserAuth from './pages/UserAuth';
+import PlayArena from './pages/PlayArena';
+import Game from './pages/Game';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<UserAuth />}></Route>
+        <Route path="/PlayArena/:userName" element={<PlayArena />}></Route>
+        <Route path="/Game/:user1/:user2" element={<Game />}></Route>
+      </Routes>
+    </>
+      
   );
 }
 
